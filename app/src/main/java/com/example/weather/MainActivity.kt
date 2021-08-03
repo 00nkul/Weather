@@ -1,22 +1,17 @@
 package com.example.weather
 
 import android.content.Context
-import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.widget.doOnTextChanged
 import com.android.volley.Request
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.bumptech.glide.Glide
-import com.bumptech.glide.request.target.CustomTarget
-import com.bumptech.glide.request.transition.Transition
 import com.google.android.material.textfield.TextInputLayout
 import org.json.JSONObject
 
@@ -38,6 +33,17 @@ class MainActivity : AppCompatActivity() {
         val tvNext1 :TextView = findViewById(R.id.tvNext1)
         val tvAqi :TextView = findViewById(R.id.aqi)
         val tvWeather :TextView = findViewById(R.id.tvWeather)
+        val tvSunrise :TextView = findViewById(R.id.sunRise)
+        val tvSunSet :TextView = findViewById(R.id.sunSet)
+        val tvHumidity :TextView = findViewById(R.id.humidity)
+        val tvPressure :TextView = findViewById(R.id.pressure)
+        val tvUvIndex :TextView = findViewById(R.id.uvIndex)
+        val tvWindSpeed :TextView = findViewById(R.id.windSpeed)
+        val tvRainPercent :TextView = findViewById(R.id.rainPercent)
+        val tvSnowPercent :TextView = findViewById(R.id.snowPercent)
+        val aqitv :TextView = findViewById(R.id.tvAQI)
+        val tvAQIClk :TextView = findViewById(R.id.tvAQIClk)
+
         val outlinedTextField :TextInputLayout = findViewById(R.id.outlinedTextField)
         val btnGo :Button = findViewById(R.id.btnGo)
 
@@ -75,6 +81,7 @@ class MainActivity : AppCompatActivity() {
 
                          val aqi  = response.getJSONObject("current").getJSONObject("air_quality").getInt("pm2_5")
                          tvAqi.text = "AOI $aqi"
+                         aqitv.text = aqi.toString()
 
                          val  toDay :JSONObject= response.getJSONObject("forecast").getJSONArray("forecastday")[0] as JSONObject
                          val  tomorrow:JSONObject= response.getJSONObject("forecast").getJSONArray("forecastday")[1] as JSONObject
@@ -95,6 +102,16 @@ class MainActivity : AppCompatActivity() {
                          val textNext:String = nextDay.getJSONObject("day").getJSONObject("condition").getString("text")
                          val urlNext:String = "https:"+nextDay.getJSONObject("day").getJSONObject("condition").getString("icon")
 
+                         val sunrise = toDay.getJSONObject("astro").getString("sunrise")
+                         val sunset = toDay.getJSONObject("astro").getString("sunset")
+                         val dayObj = toDay.getJSONObject("day")
+                         val rainPercent =dayObj.getString("daily_chance_of_rain")
+                         val snowPercent =dayObj.getString("daily_chance_of_snow")
+                         val humidity = dayObj.getInt("avghumidity")
+                         val windSpeed = dayObj.getDouble("maxwind_kph")
+                         val uvIndex = dayObj.getInt("uv")
+                         val pressure = response.getJSONObject("current").getInt("pressure_mb")
+
                          setImage(ivToday,urlToday)
                          setImage(ivTom,urlTomorrow)
                          setImage(ivNext,urlNext)
@@ -107,6 +124,14 @@ class MainActivity : AppCompatActivity() {
                          tvTom1.text = "$minTempTomorrow\u00B0 / $maxTempTom\u00B0"
                          tvNext1.text = "$minTempNext\u00B0 / $maxTempNext\u00B0"
 
+                         tvSunrise.text = sunrise
+                         tvSunSet.text = sunset
+                         tvRainPercent.text = rainPercent
+                         tvSnowPercent.text = snowPercent
+                         tvHumidity.text = humidity.toString()
+                         tvWindSpeed.text = windSpeed.toString()
+                         tvUvIndex.text = uvIndex.toString()
+                         tvPressure.text = pressure.toString()
                      },
                      { error ->
                          Toast.makeText(this, "Unable_to_load ", Toast.LENGTH_LONG).show()
@@ -117,14 +142,6 @@ class MainActivity : AppCompatActivity() {
              queue.add(jsonObjectRequest)
 
          }
-
-         //on Data
-//         outlinedTextField.editText?.doOnTextChanged { inputText, _, _, _ ->
-//             // Respond to input text change
-//             val inputText = outlinedTextField.editText?.text.toString()
-//             city = inputText
-//             makeRequest(city!!)
-//         }
 
          btnGo.setOnClickListener {
              val inputText = outlinedTextField.editText?.text.toString()
@@ -138,6 +155,10 @@ class MainActivity : AppCompatActivity() {
              outlinedTextField.hint = ""
          }
          city?.let { makeRequest(it) }
+
+         tvAQIClk.setOnClickListener {
+             AqiDialouge(this).show()
+         }
 
      }
 

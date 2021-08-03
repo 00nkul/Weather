@@ -234,6 +234,250 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_margin="10dp"
+            android:padding="5dp"
+            android:background="@drawable/gls">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/light"
+                    android:text="Sunrise"
+                    android:textColor="#C9FFFFFF"
+                    android:textSize="15sp" />
+                <TextView
+                    android:id="@+id/sunRise"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:fontFamily="@font/light"
+                    android:text="Sunrise"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/light"
+                    android:text="Chance of Rain"
+                    android:textColor="#C9FFFFFF"
+                    android:textSize="15sp" />
+                <TextView
+                    android:id="@+id/rainPercent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="rain"
+                    android:layout_marginHorizontal="5dp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/light"
+                    android:textSize="20sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/light"
+                    android:text="Pressure"
+                    android:textColor="#C9FFFFFF"
+                    android:textSize="15sp" />
+                <TextView
+                    android:id="@+id/pressure"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Pressure"
+                    android:layout_marginHorizontal="5dp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/light"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/light"
+                    android:text="Wind Speed"
+                    android:textColor="#C9FFFFFF"
+                    android:textSize="15sp" />
+                <TextView
+                    android:id="@+id/windSpeed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="windSpeed"
+                    android:layout_marginHorizontal="5dp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/light"
+                    android:textSize="20sp"
+                    android:layout_marginBottom="5dp"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/light"
+                    android:text="Sunset Time"
+                    android:textColor="#C9FFFFFF"
+                    android:textSize="15sp" />
+
+             <TextView
+                    android:id="@+id/sunSet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:fontFamily="@font/light"
+                    android:text="sunSet"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/light"
+                    android:text="Chance of Snow"
+                    android:textColor="#C9FFFFFF"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/snowPercent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="snow"
+                    android:layout_marginHorizontal="5dp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/light"
+                    android:textSize="20sp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/light"
+                    android:text="Humidity"
+                    android:textColor="#C9FFFFFF"
+                    android:textSize="15sp" />
+                <TextView
+                    android:id="@+id/humidity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="humidity"
+                    android:layout_marginHorizontal="5dp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/light"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/light"
+                    android:text="UV"
+                    android:textColor="#C9FFFFFF"
+                    android:textSize="15sp" />
+                <TextView
+                    android:id="@+id/uvIndex"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="uvIndex"
+                    android:layout_marginHorizontal="5dp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/light"
+                    android:textSize="20sp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:background="@drawable/gls">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/light"
+                android:text="Air Quality Index"
+                android:textColor="#C9FFFFFF"
+                android:textSize="15sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginVertical="5dp"
+                >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="5dp"
+                    app:srcCompat="@drawable/ic_baseline_air_24" />
+
+                <TextView
+                    android:id="@+id/tvAQI"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:gravity="left"
+                    android:layout_gravity="center"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/light"
+                    android:textSize="20sp"
+                    android:text="TextView" />
+
+                <TextView
+                    android:id="@+id/tvAQIClk"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Full Air Quality Broadcast"
+                    android:gravity="end"
+                    android:layout_gravity="center"
+                    android:textColor="#C9FFFFFF"
+                    android:fontFamily="@font/light"
+                    android:textSize="15sp"
+                    android:layout_marginEnd="10dp"
+                    app:drawableEndCompat="@drawable/arrow_forward" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
 
 
     </LinearLayout>
